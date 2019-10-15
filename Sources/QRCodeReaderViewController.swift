@@ -138,12 +138,7 @@ public class QRCodeReaderViewController: UIViewController {
         NSLayoutConstraint(item: builder.readerView.view, attribute: attribute, relatedBy: .equal, toItem: view, attribute: attribute, multiplier: 1, constant: 0).isActive = true
     }
     
-    if #available(iOS 11.0, *) {
-        view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: builder.readerView.view.bottomAnchor).isActive = true
-    }
-    else {
-        NSLayoutConstraint(item: builder.readerView.view, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-    }
+    NSLayoutConstraint(item: builder.readerView.view, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
   }
 
   // MARK: - Controlling the Reader
